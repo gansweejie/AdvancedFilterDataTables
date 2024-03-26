@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Multiple Filter DataTables">
+    <meta name="author" content="GanSweeJie">
+    <title>Advanced Filter - DataTables</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-2.0.3/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+
+<body>
+    <div style="margin: 5px 10px 0px 10px;">
+        <div class="card">
+            <h5 class="card-header">Multiple Filter</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <label class="form-label">Name:</label>
+                                <input type="text" class="form-control dt-input" data-column="0"
+                                    placeholder="Alaric Beslier" />
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <label class="form-label">Job:</label>
+                                <input type="text" class="form-control dt-input" data-column="1"
+                                    placeholder="Web designer" />
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <label class="form-label">City:</label>
+                                <input type="text" class="form-control dt-input" data-column="2" placeholder="Balky" />
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <label class="form-label">Post:</label>
+                                <input type="text" class="form-control dt-input" data-column="3" placeholder="14" />
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <label class="form-label">Date:</label>
+                                <input type="text" id="dateRangePicker" class="form-control date-range dt-input"
+                                    data-column="4" placeholder="StartDate to EndDate">
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <label class="form-label">Salary:</label>
+                                <input type="text" class="form-control dt-input" data-column="5" placeholder="10000" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-0" />
+            <div class="table-responsive">
+                <table id="example" class="example table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Job</th>
+                            <th>City</th>
+                            <th>Post</th>
+                            <th>Date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>25/04/2024</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>25/07/2024</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>12/01/2024</td>
+                            <td>$86,000</td>
+                        </tr>
+                        <tr>
+                            <td>Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>29/03/2024</td>
+                            <td>$433,060</td>
+                        </tr>
+                        <tr>
+                            <td>Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>33</td>
+                            <td>28/11/2024</td>
+                            <td>$162,700</td>
+                        </tr>
+                        <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>02/12/2024</td>
+                            <td>$372,000</td>
+                        </tr>
+                        <tr>
+                            <td>Herrod Chandler</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>59</td>
+                            <td>06/08/2024</td>
+                            <td>$137,500</td>
+                        </tr>
+                        <tr>
+                            <td>Rhona Davidson</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>55</td>
+                            <td>14/10/2024</td>
+                            <td>$327,900</td>
+                        </tr>
+                        <tr>
+                            <td>Colleen Hurst</td>
+                            <td>Javascript Developer</td>
+                            <td>San Francisco</td>
+                            <td>39</td>
+                            <td>15/09/2024</td>
+                            <td>$205,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sonya Frost</td>
+                            <td>Software Engineer</td>
+                            <td>Edinburgh</td>
+                            <td>23</td>
+                            <td>13/12/2024</td>
+                            <td>$103,600</td>
+                        </tr>
+                        <tr>
+                            <td>Jena Gaines</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>30</td>
+                            <td>19/12/2024</td>
+                            <td>$90,560</td>
+                        </tr>
+                        <tr>
+                            <td>Zorita Serrano</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>56</td>
+                            <td>01/06/2024</td>
+                            <td>$115,000</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Acosta</td>
+                            <td>Junior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>43</td>
+                            <td>01/02/2024</td>
+                            <td>$75,650</td>
+                        </tr>
+                        <tr>
+                            <td>Cara Stevens</td>
+                            <td>Sales Assistant</td>
+                            <td>New York</td>
+                            <td>46</td>
+                            <td>06/12/2024</td>
+                            <td>$145,600</td>
+                        </tr>
+                        <tr>
+                            <td>Hermione Butler</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>47</td>
+                            <td>21/03/2024</td>
+                            <td>$356,250</td>
+                        </tr>
+                        <tr>
+                            <td>Lael Greer</td>
+                            <td>Systems Administrator</td>
+                            <td>London</td>
+                            <td>21</td>
+                            <td>27/02/2024</td>
+                            <td>$103,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jonas Alexander</td>
+                            <td>Developer</td>
+                            <td>San Francisco</td>
+                            <td>30</td>
+                            <td>14/07/2024</td>
+                            <td>$86,500</td>
+                        </tr>
+                        <tr>
+                            <td>Shad Decker</td>
+                            <td>Regional Director</td>
+                            <td>Edinburgh</td>
+                            <td>51</td>
+                            <td>13/11/2024</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Bruce</td>
+                            <td>Javascript Developer</td>
+                            <td>Singapore</td>
+                            <td>29</td>
+                            <td>27/06/2024</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Snider</td>
+                            <td>Customer Support</td>
+                            <td>New York</td>
+                            <td>27</td>
+                            <td>25/01/2024</td>
+                            <td>$112,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/v/bs5/dt-2.0.3/datatables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var AdvFilterTable = $('#example').DataTable({
+            //"order": [[0, ""]],
+            "columnDefs": [
+                {
+                    "targets": [],
+                    "orderable": false,
+                    "searchable": false
+                },
+                {
+                    "targets": [],
+                    "visible": false,
+                },
+            ],
+            responsive: true,
+            dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6 justify-content-end d-md-flex'p>>",
+        });
+
+        $('#dateRangePicker').daterangepicker({
+            opens: 'center',
+            drops: 'bottom',
+            startDate: null,
+            endDate: null,
+            showDropdowns: true,
+            autoUpdateInput: false,
+            ranges: {
+                'All': [null, null],
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                'This Year': [moment().startOf('year'), moment().endOf('year')]
+            },
+            locale: {
+                format: 'DD/MM/YYYY',
+            }
+        }, function (start, end, label) {
+            if (label === 'All') {
+                $('#dateRangePicker').val('All');
+            } else {
+                $('#dateRangePicker').val(start.format('DD/MM/YYYY') + ' to ' + end.format('DD/MM/YYYY'));
+            }
+        });
+
+        $('#dateRangePicker').on('show.daterangepicker', function (ev, picker) {
+            picker.setStartDate(moment().startOf('month'));
+            picker.setEndDate(moment());
+            picker.updateCalendars();
+            $('.applyBtn').prop('disabled', false);
+        });
+
+        $('#dateRangePicker').on('apply.daterangepicker', function (ev, picker) {
+            filterByDate(picker.startDate, picker.endDate);
+        });
+
+        $('#dateRangePicker').on('cancel.daterangepicker', function (ev, picker) {
+            $('#dateRangePicker').val(null);
+            filterByDate(null, null);
+        });
+
+        $('.dt-input').on('keyup', function () {
+            filterColumn($(this).attr('data-column'), $(this).val());
+        });
+
+        function filterColumn(index, val) {
+            AdvFilterTable.column(index).search(val, false, true).draw();
+        }
+
+        function filterByDate(startDate, endDate) {
+            var columnIndex = $('#dateRangePicker').data('column');
+            AdvFilterTable.column(columnIndex).search('').draw();
+            if (startDate !== '' && endDate !== '') {
+                $.fn.dataTable.ext.search = [];
+                $.fn.dataTable.ext.search.push(
+                    function (settings, data, dataIndex) {
+                        var date = moment(data[columnIndex], 'DD/MM/YYYY');
+                        return date.isBetween(startDate, endDate, null, '[]');
+                    }
+                );
+                AdvFilterTable.draw();
+            }
+        }
+    });
+</script>
+
+</html>

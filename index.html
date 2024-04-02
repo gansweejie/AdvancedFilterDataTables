@@ -278,12 +278,6 @@
             locale: {
                 format: 'DD/MM/YYYY',
             }
-        }, function (start, end, label) {
-            if (label === 'All') {
-                $('#dateRangePicker').val('All');
-            } else {
-                $('#dateRangePicker').val(start.format('DD/MM/YYYY') + ' to ' + end.format('DD/MM/YYYY'));
-            }
         });
 
         $('#dateRangePicker').on('show.daterangepicker', function (ev, picker) {
@@ -294,6 +288,11 @@
         });
 
         $('#dateRangePicker').on('apply.daterangepicker', function (ev, picker) {
+            if (picker.chosenLabel === 'All') {
+                $('#dateRangePicker').val('All');
+            } else {
+                $('#dateRangePicker').val(picker.startDate.format('DD/MM/YYYY') + ' to ' + picker.endDate.format('DD/MM/YYYY'));
+            }
             filterByDate(picker.startDate, picker.endDate);
         });
 
